@@ -46,4 +46,16 @@ public class UploadFileServiceImpl implements UploadFileService {
         return insert > 0;
     }
 
+    /**
+     * 保存数据（选择性）
+     *
+     * @param record 实体类
+     * @return 返回 保存数据结果
+     */
+    @Override
+    public boolean saveSelective(UploadFile record) {
+        int insertSelective = uploadFileMapper.insertSelective(record);
+        return insertSelective > 0;
+    }
+
 }

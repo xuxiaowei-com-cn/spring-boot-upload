@@ -44,4 +44,15 @@ class UploadFileServiceTests {
         log.info(String.valueOf(save));
     }
 
+    /**
+     * 保存数据（选择性）
+     */
+    @Test
+    void saveSelective() {
+        UploadFile uploadFile = new UploadFile();
+        uploadFile.setUploadFileName("");
+        boolean saveSelective = uploadFileService.saveSelective(uploadFile);
+        log.info(String.valueOf(saveSelective));
+    }
+
 }
