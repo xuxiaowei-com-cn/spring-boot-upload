@@ -33,4 +33,12 @@ public interface UploadFileMapper {
      */
     int insert(UploadFile record);
 
+    /**
+     * 插入数据（选择性）
+     *
+     * @param record 实体类
+     * @return 返回 插入结果
+     */
+    int insertSelective(UploadFile record);
+
 }

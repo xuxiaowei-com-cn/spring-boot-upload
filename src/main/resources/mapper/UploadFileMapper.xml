@@ -18,4 +18,38 @@
         values (#{uploadFileName}, #{uploadFileBlob}, #{uploadFileType}, #{uploadFileSize})
     </insert>
 
+    <!-- 插入数据（选择性） -->
+    <insert id="insertSelective" parameterType="cn.com.xuxiaowei.entity.UploadFile"
+            keyColumn="upload_file_id" keyProperty="uploadFileId" useGeneratedKeys="true">
+        insert into upload_file
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uploadFileName != null">
+                upload_file_name,
+            </if>
+            <if test="uploadFileBlob != null">
+                upload_file_blob,
+            </if>
+            <if test="uploadFileType != null">
+                upload_file_type,
+            </if>
+            <if test="uploadFileSize != null">
+                upload_file_size,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uploadFileName != null">
+                #{uploadFileName},
+            </if>
+            <if test="uploadFileBlob != null">
+                #{uploadFileBlob},
+            </if>
+            <if test="uploadFileType != null">
+                #{uploadFileType},
+            </if>
+            <if test="uploadFileSize != null">
+                #{uploadFileSize},
+            </if>
+        </trim>
+    </insert>
+
 </mapper>
