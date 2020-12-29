@@ -1,0 +1,46 @@
+en
+#
+# 服务器配置
+server:
+  # 端口
+  port: 8304
+#
+# Spring 配置
+spring:
+  #
+  # Thymeleaf 配置
+  thymeleaf:
+    # 缓存配置
+    cache: false
+  #
+  # 数据库 配置
+  datasource:
+    # 数据库驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库地址
+    url: jdbc:mysql://127.0.0.1:3306/spring-boot-upload?useSSL=false&serverTimezone=GMT%2B8
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: root
+#
+# MyBatis 配置
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+#
+# 日志 配置
+logging:
+  # 日志文件 配置
+  file:
+    # 日志文件名及路径
+    name: /date/log/spring-boot-upload.log
+  logback:
+    rollingpolicy:
+      # 最大日志文件
+      max-file-size: 20MB
+      # 日志文件保存天数
+      max-history: 365
+  level:
+    # web 日志,当且仅当开发时才可使用 web 为 debug
+    web: debug
