@@ -15,6 +15,8 @@
  */
 package cn.com.xuxiaowei.mapper;
 
+import cn.com.xuxiaowei.entity.UploadFile;
+
 /**
  * 上传文件表 Mapper 接口
  *
@@ -22,5 +24,13 @@ package cn.com.xuxiaowei.mapper;
  * @since 0.0.1
  */
 public interface UploadFileMapper {
+
+    /**
+     * 插入数据
+     *
+     * @param record 实体类
+     * @return 返回 插入结果
+     */
+    int insert(UploadFile record);
 
 }

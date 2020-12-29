@@ -11,4 +11,11 @@
         <result column="upload_file_size" property="uploadFileSize"/>
     </resultMap>
 
+    <!-- 插入数据 -->
+    <insert id="insert" parameterType="cn.com.xuxiaowei.entity.UploadFile"
+            keyColumn="upload_file_id" keyProperty="uploadFileId" useGeneratedKeys="true">
+        insert into upload_file (upload_file_name, upload_file_blob, upload_file_type, upload_file_size)
+        values (#{uploadFileName}, #{uploadFileBlob}, #{uploadFileType}, #{uploadFileSize})
+    </insert>
+
 </mapper>
