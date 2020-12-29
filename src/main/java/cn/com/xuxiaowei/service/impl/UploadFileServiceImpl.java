@@ -15,6 +15,7 @@
  */
 package cn.com.xuxiaowei.service.impl;
 
+import cn.com.xuxiaowei.entity.UploadFile;
 import cn.com.xuxiaowei.mapper.UploadFileMapper;
 import cn.com.xuxiaowei.service.UploadFileService;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,16 @@ public class UploadFileServiceImpl implements UploadFileService {
     @Resource
     private UploadFileMapper uploadFileMapper;
 
+    /**
+     * 保存数据
+     *
+     * @param record 实体类
+     * @return 返回 保存数据结果
+     */
+    @Override
+    public boolean save(UploadFile record) {
+        int insert = uploadFileMapper.insert(record);
+        return insert > 0;
+    }
 
 }

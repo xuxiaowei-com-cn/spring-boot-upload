@@ -16,21 +16,32 @@
 package cn.com.xuxiaowei.service;
 
 import cn.com.xuxiaowei.entity.UploadFile;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * 上传文件表 服务接口
+ * 上传文件表 服务接口 测试类
  *
  * @author xuxiaowei
  * @since 0.0.1
  */
-public interface UploadFileService {
+@Slf4j
+@SpringBootTest
+class UploadFileServiceTests {
+
+    @Autowired
+    private UploadFileService uploadFileService;
 
     /**
      * 保存数据
-     *
-     * @param record 实体类
-     * @return 返回 保存数据结果
      */
-    boolean save(UploadFile record);
+    @Test
+    void save() {
+        UploadFile uploadFile = new UploadFile();
+        boolean save = uploadFileService.save(uploadFile);
+        log.info(String.valueOf(save));
+    }
 
 }
