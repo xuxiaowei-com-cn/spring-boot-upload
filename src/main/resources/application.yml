@@ -33,7 +33,7 @@ logging:
   # 日志文件 配置
   file:
     # 日志文件名及路径
-    name: /date/log/spring-boot-upload.log
+    name: /data/log/spring-boot-upload.log
   logback:
     rollingpolicy:
       # 最大日志文件
